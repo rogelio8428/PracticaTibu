@@ -9,7 +9,7 @@ class DisplayMessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_message)
 
-        val message = intent.getStringExtra("mensaje")
+        val message = intent.getStringExtra(PARAM_MESSAGE)
         TVMuestra.text = "Hola $message"
 
     }
