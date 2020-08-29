@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PracticaTibu</string>
+    <string name="ingrese">Por favor ingrese su nombre</string>
+    <string name="boton">Aceptar</string>
+</resources>
