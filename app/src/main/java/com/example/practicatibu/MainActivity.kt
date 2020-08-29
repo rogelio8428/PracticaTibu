@@ -1,10 +1,10 @@
 package com.example.practicatibu
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +20,6 @@ class MainActivity : AppCompatActivity() {
             putExtra("mensaje", mensaje)
         }
         startActivity(intent)
-        //cambio
+
     }
 }

@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DisplayMessageActivity">
 
+    
     <TextView
         android:id="@+id/TVMuestra"
         android:layout_width="wrap_content"
