@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     fun enviarMensaje(view: View){
         val message = editTextTextPersonName.text.toString()
 
-        if (message != "") {
+        if (!message.isNullOrEmpty()) {
 
             val intent = Intent(this, DisplayMessageActivity::class.java).apply {
                 putExtra(PARAM_MESSAGE, message)
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         }
     else {
 
-            Toast.makeText(this, "Debe ingresar un nombre", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.toast, Toast.LENGTH_LONG).show()
         }
     }
 

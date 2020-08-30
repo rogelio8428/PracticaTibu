@@ -12,14 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
         android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
         android:text="@string/explication"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
@@ -28,7 +27,7 @@
         android:layout_marginStart="@dimen/normal_margin"
         android:layout_marginTop="@dimen/normal_margin"
         android:layout_marginEnd="@dimen/normal_margin"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/normal_margin"
         android:ems="10"
         android:hint="@string/entry"
         android:textSize="@dimen/size_text"
