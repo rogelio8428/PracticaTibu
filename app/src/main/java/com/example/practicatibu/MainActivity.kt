@@ -3,6 +3,7 @@ package com.example.practicatibu
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,10 +16,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun enviarMensaje(view: View){
-        val mensaje = editTextTextPersonName.text.toString()
-        val intent = Intent(this, DisplayMessageActivity::class.java).apply {
-            putExtra(PARAM_MESSAGE, mensaje)
+        val message = editTextTextPersonName.text.toString()
+
+        if (message != "") {
+
+            val intent = Intent(this, DisplayMessageActivity::class.java).apply {
+                putExtra(PARAM_MESSAGE, message)
+            }
+            startActivity(intent)
         }
-        startActivity(intent)
+    else {
+
+            Toast.makeText(this, "Debe ingresar un nombre", Toast.LENGTH_LONG).show()
+        }
     }
+
 }

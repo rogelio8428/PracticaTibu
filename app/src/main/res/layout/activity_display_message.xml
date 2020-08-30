@@ -13,21 +13,12 @@
         android:layout_marginStart="@dimen/normal_margin"
         android:layout_marginTop="@dimen/large_margin"
         android:layout_marginEnd="@dimen/normal_margin"
-        tools:text="Nombre"
+        android:textAlignment="center"
         android:textColor="@color/name_text_color"
-        android:textSize="@dimen/size_text"
+        android:textSize="@dimen/size_text_xlarge"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Nombre" />
 
-    <ImageView
-        android:scaleType="centerCrop"
-        android:id="@+id/imageView"
-        android:layout_width="@dimen/size_imag"
-        android:layout_height="@dimen/size_imag"
-        android:layout_marginTop="@dimen/normal_margin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVMuestra"
-        app:srcCompat="@drawable/messi" />
 </androidx.constraintlayout.widget.ConstraintLayout>
