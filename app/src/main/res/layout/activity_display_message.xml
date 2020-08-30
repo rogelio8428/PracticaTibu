@@ -8,13 +8,26 @@
 
     <TextView
         android:id="@+id/TVMuestra"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="340dp"
-        android:text="TextView"
-        android:textColor="#000000"
-        android:textSize="36sp"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        tools:text="Nombre"
+        android:textColor="@color/name_text_color"
+        android:textSize="@dimen/size_text"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/size_imag"
+        android:layout_height="@dimen/size_imag"
+        android:layout_marginTop="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVMuestra"
+        app:srcCompat="@drawable/messi" />
 </androidx.constraintlayout.widget.ConstraintLayout>

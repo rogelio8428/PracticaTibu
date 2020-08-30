@@ -1,10 +1,12 @@
 package com.example.practicatibu
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main.*
+
+const val PARAM_MESSAGE ="name"
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,13 +15,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun enviarMensaje(view: View){
-
-        val editText = findViewById<EditText>(R.id.editTextTextPersonName)
-        val mensaje = editText.text.toString()
+        val mensaje = editTextTextPersonName.text.toString()
         val intent = Intent(this, DisplayMessageActivity::class.java).apply {
-            putExtra("mensaje", mensaje)
+            putExtra(PARAM_MESSAGE, mensaje)
         }
         startActivity(intent)
-        //cambio
     }
 }
