@@ -34,4 +34,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun terminosYCondiciones(view: View){
+
+        val intent = Intent(this, Terminos::class.java).apply {
+        }
+        startActivity(intent)
+    }
+
 }

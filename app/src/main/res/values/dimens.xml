@@ -10,4 +10,6 @@
     <dimen name="size_text_xlarge">40sp</dimen>
     <dimen name="distance_button">16dp</dimen>
     <dimen name="size_imag">100dp</dimen>
-</resources>
+    <dimen name="size_title">28sp</dimen>
+    <dimen name="size_term">20sp</dimen>
+    </resources>
