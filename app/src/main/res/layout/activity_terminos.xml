@@ -8,8 +8,8 @@
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,29 +17,30 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextTextPersonName2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
                 android:text="@string/termino"
                 android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/size_title"
                 android:textStyle="bold" />
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextTextMultiLine4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="start|top"
-                android:inputType="textMultiLine"
                 android:text="@string/condiciones"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
+                android:textColor="@android:color/black"
                 android:textSize="@dimen/size_term" />
         </LinearLayout>
     </ScrollView>
