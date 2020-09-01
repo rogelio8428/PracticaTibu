@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
     }
 
     fun enviarMensaje(view: View){
@@ -29,6 +30,13 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(this, R.string.toast, Toast.LENGTH_LONG).show()
         }
+    }
+
+    fun terminosYCondiciones(view: View){
+
+        val intent = Intent(this, Terminos::class.java).apply {
+        }
+        startActivity(intent)
     }
 
 }
