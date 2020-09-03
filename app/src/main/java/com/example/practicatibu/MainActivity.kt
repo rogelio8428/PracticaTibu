@@ -39,4 +39,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    fun changeImplicit(view: View){
+        startActivity(Intent(this, ImplicitIntent::class.java).apply{})
+    }
+
 }
