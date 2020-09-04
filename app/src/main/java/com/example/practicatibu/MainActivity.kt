@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     else {
-
             Toast.makeText(this, R.string.toast, Toast.LENGTH_LONG).show()
         }
     }
