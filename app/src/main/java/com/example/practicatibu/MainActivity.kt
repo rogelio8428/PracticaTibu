@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     else {
-
             Toast.makeText(this, R.string.toast, Toast.LENGTH_LONG).show()
         }
     }
@@ -37,6 +36,10 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, Terminos::class.java).apply {
         }
         startActivity(intent)
+    }
+
+    fun changeImplicit(view: View){
+        startActivity(Intent(this, ImplicitIntent::class.java).apply{})
     }
 
 }
