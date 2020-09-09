@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ImplicitIntent"
+        <activity android:name=".LogcatActivity"></activity>
+        <activity
+            android:name=".ImplicitIntent"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Terminos"
