@@ -2,7 +2,7 @@
 <resources>
 
     <dimen name="small_margin">8dp</dimen>
-    <dimen name="normal_margin">16dp</dimen>q
+    <dimen name="normal_margin">16dp</dimen>
     <dimen name="large_margin">32dp</dimen>
     <dimen name="extra_large_margin">64dp</dimen>
     <dimen name="person_name_height">50dp</dimen>
