@@ -42,4 +42,8 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, ImplicitIntent::class.java).apply{})
     }
 
+    fun testLogcat(view: View){
+        startActivity(Intent(this, LogcatActivity::class.java))
+    }
+
 }

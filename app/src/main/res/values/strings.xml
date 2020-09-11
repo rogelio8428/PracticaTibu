@@ -15,4 +15,12 @@
     <string name="button_text">share this text</string>
     <string name="http">http://</string>
     <string name="messi">El mejor jugador de la historia</string>
+    <string name="button_logcat">Logcat</string>
+    <string name="create">onCreate()</string>
+    <string name="start">onStart()</string>
+    <string name="pause">onPause()</string>
+    <string name="restart">onRestart()</string>
+    <string name="resume">onResume()</string>
+    <string name="stop">onStop()</string>
+    <string name="destroy">onDestroy()</string>
 </resources>
