@@ -5,7 +5,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_display_message.*
 
-
 class DisplayMessageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,17 +13,14 @@ class DisplayMessageActivity : AppCompatActivity() {
 
         val message = intent.getStringExtra(PARAM_MESSAGE)
         TVMuestra.text = "$message"
-
-
     }
 
     fun imageClickeable(view: View){
-
-     if(descripcionImagen.visibility == View.VISIBLE) {
-         descripcionImagen.visibility = View.INVISIBLE
+     val visibility = when(descripcionImagen.visibility){
+         View.VISIBLE -> View.INVISIBLE
+         View.INVISIBLE -> View.VISIBLE
+         else -> View.VISIBLE
      }
-        else{
-         descripcionImagen.visibility = View.VISIBLE
-     }
+        descripcionImagen.visibility = visibility
     }
 }
