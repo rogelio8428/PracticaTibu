@@ -21,4 +21,36 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Nombre" />
 
+    <ImageView
+        android:id="@+id/imag_messi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/distance_button"
+        android:layout_marginTop="@dimen/distance_button"
+        android:layout_marginEnd="@dimen/distance_button"
+        android:layout_marginBottom="@dimen/distance_button"
+        android:onClick="imageClickeable"
+        app:layout_constraintBottom_toTopOf="@+id/descripcionImagen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TVMuestra"
+        app:srcCompat="@drawable/messi" />
+
+    <TextView
+        android:id="@+id/descripcionImagen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/distance_button"
+        android:layout_marginTop="@dimen/distance_button"
+        android:layout_marginEnd="@dimen/distance_button"
+        android:layout_marginBottom="@dimen/distance_button"
+        android:text="@string/messi"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/size_text_image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imag_messi" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
