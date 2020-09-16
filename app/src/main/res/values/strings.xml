@@ -26,4 +26,8 @@
     <string name="formulario">Formulario</string>
     <string name="sport">Ingrese Deporte</string>
     <string name="date">Fecha</string>
+    <string name="sexuality">Sexualidad</string>
+    <string name="switch_man_or_woman">¿Es hombre?</string>
+    <string name="man">Hombre</string>
+    <string name="woman">Mujer</string>
 </resources>
