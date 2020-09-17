@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun enviarMensaje(view: View){
+    fun enviarNombre(view: View){
         val message = editTextTextPersonName.text.toString()
 
         if (!message.isNullOrEmpty()) {
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, ImplicitIntent::class.java).apply{})
     }
 
-    fun testLogcat(view: View){
+    fun crearFormulario(view: View){
         startActivity(Intent(this, LogcatActivity::class.java))
     }
 

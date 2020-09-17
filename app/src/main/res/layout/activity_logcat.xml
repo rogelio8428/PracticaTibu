@@ -43,7 +43,7 @@
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginEnd="@dimen/small_margin"
         android:ems="10"
-        android:hint="@string/sport"
+        android:hint="@string/entry_sport"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/normal_margin"
-        android:onClick="calendario"
+        android:onClick="calendarioFechaNacimiento"
         android:text="@string/date"
         app:layout_constraintEnd_toStartOf="@+id/eT_date"
         app:layout_constraintHorizontal_bias="0.0"
@@ -98,5 +98,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/switch_es_hombre"
         app:layout_constraintTop_toBottomOf="@+id/eT_date" />
+
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_margin"
+        android:layout_marginEnd="@dimen/small_margin"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:background="@color/blue_button_next"
+        android:onClick="botonSiguienteActivity"
+        android:text="@string/boton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,10 +24,18 @@
     <string name="stop">onStop()</string>
     <string name="destroy">onDestroy()</string>
     <string name="formulario">Formulario</string>
-    <string name="sport">Ingrese Deporte</string>
+    <string name="entry_sport">Ingrese Deporte</string>
     <string name="date">Fecha</string>
     <string name="sexuality">Sexualidad</string>
     <string name="switch_man_or_woman">¿Es hombre?</string>
     <string name="man">Hombre</string>
     <string name="woman">Mujer</string>
+    <string name="alert_title_sin_un_campo">Campo Incompleto</string>
+    <string name="alert_title_sin_dos_campo">Campos Incompletos</string>
+    <string name="alert_no_name">Debe ingresar un nombre</string>
+    <string name="alert_no_sport">Debe ingresar un deporte</string>
+    <string name="alert_no_name_sport">Debe ingresar un nombre y un deporte</string>
+    <string name="acept">Aceptar</string>
+    <string name="name">Nombre</string>
+    <string name="sport">Deporte</string>
 </resources>
