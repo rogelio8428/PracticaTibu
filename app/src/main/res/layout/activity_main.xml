@@ -7,20 +7,20 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvIndicacion"
+        android:id="@+id/tV_description_name_for_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normal_margin"
         android:layout_marginTop="@dimen/large_margin"
         android:layout_marginEnd="@dimen/normal_margin"
-        android:text="@string/explication"
+        android:text="@string/explication_entry_name"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/eT_title_terms_and_conditions"
         android:layout_width="match_parent"
         android:layout_height="@dimen/person_name_height"
         android:layout_marginStart="@dimen/normal_margin"
@@ -28,61 +28,60 @@
         android:layout_marginEnd="@dimen/normal_margin"
         android:layout_marginBottom="@dimen/normal_margin"
         android:ems="10"
-        android:hint="@string/entry"
+        android:hint="@string/entry_name"
         android:textSize="@dimen/size_text"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button_name_for_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvIndicacion" />
+        app:layout_constraintTop_toBottomOf="@+id/tV_description_name_for_title" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_name_for_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_button"
-        android:onClick="enviarNombre"
-        android:text="@string/boton"
+        android:onClick="sendNameForTitle"
+        android:text="@string/button_next"
         android:textSize="@dimen/size_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/eT_title_terms_and_conditions" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tV_terms_and_conditions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/extra_large_margin"
-        android:text="@string/termino"
+        android:onClick="termsAndConditions"
+        android:text="@string/title_term_and_conditions"
         android:textColor="@android:color/holo_blue_dark"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="terminosYCondiciones"
-        />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_implicit_intent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/distance_button"
         android:onClick="changeImplicit"
         android:text="@string/button_implicit"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintBottom_toTopOf="@+id/tV_terms_and_conditions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_form"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_button"
-        android:onClick="crearFormulario"
-        android:text="@string/button_formulario"
+        android:onClick="newForm"
+        android:text="@string/button_complete_form"
         android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/button_name_for_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

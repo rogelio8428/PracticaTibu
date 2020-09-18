@@ -16,33 +16,29 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun enviarNombre(view: View){
-        val message = editTextTextPersonName.text.toString()
+    fun sendNameForTitle(view: View){
+        val newName = eT_title_terms_and_conditions.text.toString()
 
-        if (!message.isNullOrEmpty()) {
-
+        if (!newName.isNullOrEmpty()) {
             val intent = Intent(this, DisplayMessageActivity::class.java).apply {
-                putExtra(PARAM_MESSAGE, message)
+                putExtra(PARAM_MESSAGE, newName)
             }
             startActivity(intent)
         }
     else {
-            Toast.makeText(this, R.string.toast, Toast.LENGTH_LONG).show()
+            Toast.makeText(this, R.string.toast_name_validation, Toast.LENGTH_LONG).show()
         }
     }
 
-    fun terminosYCondiciones(view: View){
-
-        val intent = Intent(this, Terminos::class.java).apply {
-        }
-        startActivity(intent)
+    fun termsAndConditions(view: View) {
+        startActivity( Intent(this, Terminos::class.java).apply {})
     }
 
-    fun changeImplicit(view: View){
+    fun changeImplicit(view: View) {
         startActivity(Intent(this, ImplicitIntent::class.java).apply{})
     }
 
-    fun crearFormulario(view: View){
+    fun newForm(view: View) {
         startActivity(Intent(this, LogcatActivity::class.java))
     }
 

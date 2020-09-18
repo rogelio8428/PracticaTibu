@@ -9,21 +9,19 @@ class DatosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_datos)
 
-      var userBoolean = intent.hasExtra(PARAM_USER)
-        if (userBoolean) {
-        var user = intent.getSerializableExtra(PARAM_USER) as Usuario
+        if ( intent.hasExtra(PARAM_USER)) {
+        val newUser = intent.getSerializableExtra(PARAM_USER) as Usuario
+            tVNameUser.text = newUser.name
+            tVSportUser.text = newUser.sport
+            tVDateUser.text = newUser.date
+            val manOrWoman:String
 
-            tVNameUser.text = user.name
-            tVSportUser.text = user.sport
-            tVDateUser.text = user.date
-
-            if (user.sex){
-                tVSexualityUser.text = getString(R.string.man)
-            }else{
-                tVSexualityUser.text = getString(R.string.woman)
+            manOrWoman = if (newUser.sex) {
+                getString(R.string.man)
+            }else {
+                getString(R.string.woman)
             }
-
+            tVSexualityUser.text = manOrWoman
         }
-
     }
 }

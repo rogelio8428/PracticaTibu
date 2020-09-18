@@ -17,12 +17,12 @@ class ImplicitIntent : AppCompatActivity() {
 
     }
 
-    fun navigationWhithLink(view: View){
+    fun navigationWithLink(view: View) {
         //corroboro que tenga una app que pueda abrir el link
         val activities: List<ResolveInfo> =packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
         val isIntentSafe: Boolean = activities.isNotEmpty()
-        var url:String = editText_url.text.toString()
-        if (!url.contains(getString(R.string.http))){
+        var url:String = eT_url.text.toString()
+        if (!url.contains(getString(R.string.http))) {
             url = "http://$url"
         }
         val i = Intent(Intent.ACTION_VIEW)

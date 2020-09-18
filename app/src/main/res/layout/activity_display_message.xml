@@ -7,7 +7,7 @@
     tools:context=".DisplayMessageActivity">
 
     <TextView
-        android:id="@+id/TVMuestra"
+        android:id="@+id/tV_name_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normal_margin"
@@ -30,21 +30,21 @@
         android:layout_marginEnd="@dimen/distance_button"
         android:layout_marginBottom="@dimen/distance_button"
         android:onClick="imageClickeable"
-        app:layout_constraintBottom_toTopOf="@+id/descripcionImagen"
+        app:layout_constraintBottom_toTopOf="@+id/tV_description_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TVMuestra"
+        app:layout_constraintTop_toBottomOf="@+id/tV_name_title"
         app:srcCompat="@drawable/messi" />
 
     <TextView
-        android:id="@+id/descripcionImagen"
+        android:id="@+id/tV_description_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/distance_button"
         android:layout_marginTop="@dimen/distance_button"
         android:layout_marginEnd="@dimen/distance_button"
         android:layout_marginBottom="@dimen/distance_button"
-        android:text="@string/messi"
+        android:text="@string/description_imag"
         android:textColor="@android:color/black"
         android:textSize="@dimen/size_text_image"
         android:visibility="invisible"
