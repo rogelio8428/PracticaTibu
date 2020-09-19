@@ -14,9 +14,7 @@ class DatosActivity : AppCompatActivity() {
             tVNameUser.text = newUser.name
             tVSportUser.text = newUser.sport
             tVDateUser.text = newUser.date
-            val manOrWoman:String
-
-            manOrWoman = if (newUser.sex) {
+            val manOrWoman = if (newUser.sex) {
                 getString(R.string.man)
             }else {
                 getString(R.string.woman)

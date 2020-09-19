@@ -24,7 +24,7 @@ class LogcatActivity : AppCompatActivity(){
         initViews()
     }
 
-    fun initViews(){
+    private fun initViews() {
         switchDeterminaSexualidad()
     }
 
@@ -33,7 +33,7 @@ class LogcatActivity : AppCompatActivity(){
         Log.i(TAG, R.string.start.toString())
     }
 
-    override fun onPause(){
+    override fun onPause() {
         super.onPause()
         Log.i(TAG, R.string.pause.toString())
     }
@@ -72,7 +72,7 @@ class LogcatActivity : AppCompatActivity(){
 
     fun switchDeterminaSexualidad(){
         switch_es_hombre.setOnCheckedChangeListener { _ , isChecked ->
-           isMan = if (isChecked) {
+            isMan = if (isChecked) {
                 tV_resultado_sexualidad.setText(R.string.man)
                 true
             } else {
