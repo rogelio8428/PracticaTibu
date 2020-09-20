@@ -11,16 +11,16 @@ class DisplayMessageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_message)
 
-        val message = intent.getStringExtra(PARAM_MESSAGE)
-        TVMuestra.text = "$message"
+        val nameTitle = intent.getStringExtra(PARAM_MESSAGE)
+        tV_name_title.text = "$nameTitle"
     }
 
-    fun imageClickeable(view: View){
-     val visibility = when(descripcionImagen.visibility){
+    fun imageClickeable(view: View) {
+     val isViewVisibility = when(tV_description_image.visibility) {
          View.VISIBLE -> View.INVISIBLE
          View.INVISIBLE -> View.VISIBLE
          else -> View.VISIBLE
      }
-        descripcionImagen.visibility = visibility
+        tV_description_image.visibility = isViewVisibility
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".ImplicitIntent">
 
     <EditText
-        android:id="@+id/editText_url"
+        android:id="@+id/eT_url"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normal_margin"
@@ -20,18 +20,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/boton_url"
+        android:id="@+id/button_url"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normal_margin"
         android:layout_marginTop="@dimen/distance_button"
-        android:onClick="navigation"
+        android:onClick="navigationWithLink"
         android:text="@string/button_url"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_url" />
+        app:layout_constraintTop_toBottomOf="@+id/eT_url" />
 
     <EditText
-        android:id="@+id/editText_location"
+        android:id="@+id/eT_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normal_margin"
@@ -41,7 +41,7 @@
         android:hint="@string/location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_url" />
+        app:layout_constraintTop_toBottomOf="@+id/button_url" />
 
     <Button
         android:id="@+id/button4"
@@ -51,10 +51,10 @@
         android:layout_marginTop="@dimen/distance_button"
         android:text="@string/button_location"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_location" />
+        app:layout_constraintTop_toBottomOf="@+id/eT_location" />
 
     <EditText
-        android:id="@+id/editText_text"
+        android:id="@+id/eT_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/normal_margin"
@@ -74,6 +74,6 @@
         android:layout_marginTop="@dimen/distance_button"
         android:text="@string/button_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText_text" />
+        app:layout_constraintTop_toBottomOf="@+id/eT_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

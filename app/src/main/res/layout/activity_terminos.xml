@@ -21,23 +21,23 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/eT_title_terms_and_conditions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:text="@string/termino"
+                android:text="@string/title_term_and_conditions"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/size_title"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/editTextTextMultiLine4"
+                android:id="@+id/eT_terms_and_Conditions"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:ems="10"
                 android:gravity="start|top"
-                android:text="@string/condiciones"
+                android:text="@string/term_and_conditions"
                 android:textAlignment="textStart"
                 android:textAllCaps="false"
                 android:textColor="@android:color/black"
