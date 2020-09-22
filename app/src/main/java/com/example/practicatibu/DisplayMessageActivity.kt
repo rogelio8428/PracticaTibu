@@ -16,11 +16,11 @@ class DisplayMessageActivity : AppCompatActivity() {
     }
 
     fun imageClickeable(view: View) {
-     val isViewVisibility = when(tV_description_image.visibility) {
-         View.VISIBLE -> View.INVISIBLE
-         View.INVISIBLE -> View.VISIBLE
-         else -> View.VISIBLE
-     }
+        val isViewVisibility = when (tV_description_image.visibility) {
+            View.VISIBLE -> View.INVISIBLE
+            View.INVISIBLE -> View.VISIBLE
+            else -> View.VISIBLE
+        }
         tV_description_image.visibility = isViewVisibility
     }
 }
