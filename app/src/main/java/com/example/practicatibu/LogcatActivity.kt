@@ -18,7 +18,7 @@ const val PARAM_USER = "datauser"
 class LogcatActivity : AppCompatActivity() {
 
     private val TAG = LogcatActivity::class.java.simpleName
-    private var isMan = true
+    private var isMan = false
     private lateinit var user: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,10 +84,8 @@ class LogcatActivity : AppCompatActivity() {
         val dpd =
             DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 eT_date.setText("$mDay/$mMonth/$mYear")
+                user.validacionMayoriaEdad(mYear, mMonth, mDay)
             }, year, month, day)
-        user.validacionMayoriaEdad(dpd.datePicker.year,
-            dpd.datePicker.month,
-            dpd.datePicker.dayOfMonth)
         dpd.show()
     }
 
@@ -107,7 +105,6 @@ class LogcatActivity : AppCompatActivity() {
         user.name = eT_entry_name.text.toString()
         user.sport = eT_entry_sport.text.toString()
         user.date = eT_date.text.toString()
-
         if (user.name.isNullOrEmpty() || user.sport.isNullOrEmpty()) {
             when (user.name.isNullOrEmpty() || user.sport.isNullOrEmpty()) {
                 user.name.isNullOrEmpty() && !user.sport.isNullOrEmpty() -> emptyFieldAlert(
@@ -118,10 +115,10 @@ class LogcatActivity : AppCompatActivity() {
             }
         } else {
             val user = Usuario(user.name, user.sport, user.date, isMan)
-            val intente = Intent(this, DatosActivity::class.java).apply {
+            val intentDatosActivity = Intent(this, DatosActivity::class.java).apply {
                 putExtra(PARAM_USER, user)
             }
-            startActivity(intent)
+            startActivity(intentDatosActivity)
         }
     }
 
