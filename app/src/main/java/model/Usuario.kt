@@ -22,22 +22,13 @@ data class Usuario(
         val fechaNacimiento = Calendar.getInstance()
         fechaNacimiento.set(year, month, day)
         val mayoriaEdad = 18
-        if (calculoDiferenciaEdad(fechaNacimiento) >= mayoriaEdad) {
+        var fechaHoy = Calendar.getInstance()
+        var fechaMayoriaEdad = fechaHoy.get(Calendar.YEAR) - mayoriaEdad
+
+        if (fechaNacimiento.before(fechaMayoriaEdad)) {
             Log.d("TAG", "El usuario es mayor a 18 años")
             listener.isOldEnough()
         }
-    }
-
-    fun calculoDiferenciaEdad(nacimiento: Calendar): Int {
-        val fechaHoy = Calendar.getInstance()
-        var diffYear = fechaHoy.get(Calendar.YEAR) - nacimiento.get(Calendar.YEAR)
-        val diffMonth = fechaHoy.get(Calendar.MONTH) - nacimiento.get(Calendar.MONTH)
-        val diffDay = fechaHoy.get(Calendar.DAY_OF_MONTH) - nacimiento.get(Calendar.DAY_OF_MONTH)
-        //preg si est
-        if (diffMonth < 0 || (diffMonth == 0 && diffDay < 0)) {
-            diffYear -= 1
-        }
-        return diffYear
     }
 }
 
