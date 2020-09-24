@@ -1,5 +1,5 @@
 package com.example.practicatibu
 
 interface ModelValidationListener {
-    fun isOldEnough()
+    fun isOldEnough(isOlder : Boolean)
 }

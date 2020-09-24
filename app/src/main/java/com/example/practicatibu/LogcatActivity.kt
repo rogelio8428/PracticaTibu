@@ -31,9 +31,14 @@ class LogcatActivity : AppCompatActivity() {
     private fun initUser() {
         user = Usuario()
         user.setModelValidationListener(object : ModelValidationListener {
-            override fun isOldEnough() {
-                button_next.isEnabled = true
-                tV_validation_age.visibility = View.INVISIBLE
+            override fun isOldEnough(isOlder: Boolean) {
+                if (isOlder) {
+                    button_next.isEnabled = true
+                    tV_validation_age.visibility = View.INVISIBLE
+                } else {
+                    button_next.isEnabled = false
+                    tV_validation_age.visibility = View.VISIBLE
+                }
             }
         })
     }
@@ -137,5 +142,4 @@ class LogcatActivity : AppCompatActivity() {
     fun emptySport(): String {
         return getString(R.string.alert_no_sport)
     }
-
 }

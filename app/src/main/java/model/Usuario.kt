@@ -19,16 +19,21 @@ data class Usuario(
     }
 
     fun validacionMayoriaEdad(year: Int, month: Int, day: Int) {
+        var isOlder: Boolean
         val fechaNacimiento = Calendar.getInstance()
         fechaNacimiento.set(year, month, day)
-        val mayoriaEdad = 18
-        var fechaHoy = Calendar.getInstance()
-        var fechaMayoriaEdad = fechaHoy.get(Calendar.YEAR) - mayoriaEdad
-
-        if (fechaNacimiento.before(fechaMayoriaEdad)) {
+        val mayoriaEdad = 1
+        val fechaHoy = Calendar.getInstance()
+        val añoMayoriaEdad = fechaHoy.get(Calendar.YEAR) - mayoriaEdad
+        var fechaNacimientoMayoriaEdad = Calendar.getInstance()
+        fechaNacimientoMayoriaEdad.set(añoMayoriaEdad, month, day)
+        if (fechaNacimiento.before(fechaNacimientoMayoriaEdad)) {
             Log.d("TAG", "El usuario es mayor a 18 años")
-            listener.isOldEnough()
+            isOlder = true
+        } else {
+            isOlder = false
         }
+        listener.isOldEnough(isOlder)
     }
 }
 
