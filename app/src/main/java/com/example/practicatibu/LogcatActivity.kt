@@ -3,11 +3,9 @@ package com.example.practicatibu
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_logcat.*
 import model.Usuario
@@ -74,17 +72,16 @@ class LogcatActivity : AppCompatActivity() {
         Log.i(TAG, R.string.destroy.toString())
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     fun calendarioFechaNacimiento(view: View) {
         val calend = Calendar.getInstance()
         val year = calend.get(Calendar.YEAR)
         val month = calend.get(Calendar.MONTH)
         val day = calend.get(Calendar.DAY_OF_MONTH)
-
         val dpd =
             DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 eT_date.setText("$mDay/$mMonth/$mYear")
                 user.validacionMayoriaEdad(mYear, mMonth, mDay)
+                user.date = eT_date.text.toString()
             }, year, month, day)
         dpd.show()
     }
@@ -104,7 +101,6 @@ class LogcatActivity : AppCompatActivity() {
     fun botonSiguienteActivity(view: View) {
         user.name = eT_entry_name.text.toString()
         user.sport = eT_entry_sport.text.toString()
-        user.date = eT_date.text.toString()
         if (user.name.isNullOrEmpty() || user.sport.isNullOrEmpty()) {
             when (user.name.isNullOrEmpty() || user.sport.isNullOrEmpty()) {
                 user.name.isNullOrEmpty() && !user.sport.isNullOrEmpty() -> emptyFieldAlert(
