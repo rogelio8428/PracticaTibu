@@ -8,13 +8,16 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_logcat.*
+import model.Usuario
 import java.util.*
 
 const val PARAM_USER = "datauser"
-class LogcatActivity : AppCompatActivity(){
+
+class LogcatActivity : AppCompatActivity() {
 
     private val TAG = LogcatActivity::class.java.simpleName
-    private var isMan = true
+    private var isMan = false
+    private lateinit var user: Usuario
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,13 +25,29 @@ class LogcatActivity : AppCompatActivity(){
 
         Log.i(TAG, R.string.create.toString())
         initViews()
+        initUser()
+    }
+
+    private fun initUser() {
+        user = Usuario()
+        user.setModelValidationListener(object : ModelValidationListener {
+            override fun isOldEnough(isOlder: Boolean) {
+                if (isOlder) {
+                    button_next.isEnabled = true
+                    tV_validation_age.visibility = View.INVISIBLE
+                } else {
+                    button_next.isEnabled = false
+                    tV_validation_age.visibility = View.VISIBLE
+                }
+            }
+        })
     }
 
     private fun initViews() {
         switchDeterminaSexualidad()
     }
 
-    override fun onStart(){
+    override fun onStart() {
         super.onStart()
         Log.i(TAG, R.string.start.toString())
     }
@@ -58,20 +77,22 @@ class LogcatActivity : AppCompatActivity(){
         Log.i(TAG, R.string.destroy.toString())
     }
 
-    fun calendarioFechaNacimiento(view: View){
+    fun calendarioFechaNacimiento(view: View) {
         val calend = Calendar.getInstance()
         val year = calend.get(Calendar.YEAR)
         val month = calend.get(Calendar.MONTH)
         val day = calend.get(Calendar.DAY_OF_MONTH)
-
-        val dpd = DatePickerDialog( this, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
+        val dpd =
+            DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 eT_date.setText("$mDay/$mMonth/$mYear")
+                user.ageValidation(mYear, mMonth, mDay)
+                user.date = eT_date.text.toString()
             }, year, month, day)
         dpd.show()
     }
 
-    fun switchDeterminaSexualidad(){
-        switch_es_hombre.setOnCheckedChangeListener { _ , isChecked ->
+    fun switchDeterminaSexualidad() {
+        switch_es_hombre.setOnCheckedChangeListener { _, isChecked ->
             isMan = if (isChecked) {
                 tV_resultado_sexualidad.setText(R.string.man)
                 true
@@ -83,26 +104,26 @@ class LogcatActivity : AppCompatActivity(){
     }
 
     fun botonSiguienteActivity(view: View) {
-        val nombre = eT_entry_name.text.toString()
-        val sport = eT_entry_sport.text.toString()
-        val fecha = eT_date.text.toString()
-
-       if (nombre.isNullOrEmpty() || sport.isNullOrEmpty()) {
-            when (nombre.isNullOrEmpty() || sport.isNullOrEmpty()) {
-                nombre.isNullOrEmpty() && !sport.isNullOrEmpty() -> emptyFieldAlert(emptyName())
-                !nombre.isNullOrEmpty() && sport.isNullOrEmpty() -> emptyFieldAlert(emptySport())
+        user.name = eT_entry_name.text.toString()
+        user.sport = eT_entry_sport.text.toString()
+        if (user.name.isNullOrEmpty() || user.sport.isNullOrEmpty()) {
+            when (user.name.isNullOrEmpty() || user.sport.isNullOrEmpty()) {
+                user.name.isNullOrEmpty() && !user.sport.isNullOrEmpty() -> emptyFieldAlert(
+                    emptyName())
+                !user.name.isNullOrEmpty() && user.sport.isNullOrEmpty() -> emptyFieldAlert(
+                    emptySport())
                 else -> emptyFieldAlert(emptyNameAndSport())
             }
         } else {
-            val user = Usuario(nombre, sport, fecha, isMan)
-            val inte =Intent(this, DatosActivity::class.java).apply {
-                putExtra(PARAM_USER,user)
+            val user = Usuario(user.name, user.sport, user.date, isMan)
+            val intentDatosActivity = Intent(this, DatosActivity::class.java).apply {
+                putExtra(PARAM_USER, user)
             }
-            startActivity(inte)
+            startActivity(intentDatosActivity)
         }
     }
 
-    fun emptyFieldAlert( alert : String){
+    fun emptyFieldAlert(alert: String) {
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(R.string.alert_title_no_field)
         builder.setMessage(alert)
@@ -121,5 +142,4 @@ class LogcatActivity : AppCompatActivity(){
     fun emptySport(): String {
         return getString(R.string.alert_no_sport)
     }
-
 }

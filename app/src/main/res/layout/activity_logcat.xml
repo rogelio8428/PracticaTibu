@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/large_margin"
         android:layout_marginTop="@dimen/normal_margin"
-        android:text="@string/sexuality"
+        android:text="@string/switch_man_or_woman"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_date" />
 
@@ -92,7 +92,7 @@
         android:layout_marginStart="@dimen/small_margin"
         android:layout_marginTop="@dimen/normal_margin"
         android:layout_marginEnd="@dimen/normal_margin"
-        android:text="@string/switch_man_or_woman"
+        android:text="@string/woman"
         android:textColor="@android:color/black"
         android:textSize="@dimen/size_term"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,9 +107,24 @@
         android:layout_marginEnd="@dimen/small_margin"
         android:layout_marginBottom="@dimen/small_margin"
         android:background="@color/blue_button_next"
+        android:enabled="false"
         android:onClick="botonSiguienteActivity"
         android:text="@string/button_next"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tV_validation_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/large_margin"
+        android:text="@string/validation_age"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="@dimen/size_text_image"
+        app:layout_constraintBottom_toTopOf="@+id/button_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
