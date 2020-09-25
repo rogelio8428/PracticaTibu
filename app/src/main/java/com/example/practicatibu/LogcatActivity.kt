@@ -85,7 +85,7 @@ class LogcatActivity : AppCompatActivity() {
         val dpd =
             DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
                 eT_date.setText("$mDay/$mMonth/$mYear")
-                user.validacionMayoriaEdad(mYear, mMonth, mDay)
+                user.ageValidation(mYear, mMonth, mDay)
                 user.date = eT_date.text.toString()
             }, year, month, day)
         dpd.show()

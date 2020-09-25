@@ -1,9 +1,10 @@
 package model
 
-import android.util.Log
 import com.example.practicatibu.ModelValidationListener
 import java.io.Serializable
 import java.util.*
+
+const val comingOfAge = 18
 
 data class Usuario(
     var name: String? = null,
@@ -18,22 +19,13 @@ data class Usuario(
         listener = obj
     }
 
-    fun validacionMayoriaEdad(year: Int, month: Int, day: Int) {
-        var isOlder: Boolean
-        val fechaNacimiento = Calendar.getInstance()
-        fechaNacimiento.set(year, month, day)
-        val mayoriaEdad = 1
-        val fechaHoy = Calendar.getInstance()
-        val añoMayoriaEdad = fechaHoy.get(Calendar.YEAR) - mayoriaEdad
-        var fechaNacimientoMayoriaEdad = Calendar.getInstance()
-        fechaNacimientoMayoriaEdad.set(añoMayoriaEdad, month, day)
-        if (fechaNacimiento.before(fechaNacimientoMayoriaEdad)) {
-            Log.d("TAG", "El usuario es mayor a 18 años")
-            isOlder = true
-        } else {
-            isOlder = false
-        }
-        listener.isOldEnough(isOlder)
+    fun ageValidation(year: Int, month: Int, day: Int) {
+        val birthDate = Calendar.getInstance()
+        birthDate.set(year, month, day)
+        val comingOfAge = Calendar.getInstance().get(Calendar.YEAR) - comingOfAge
+        var dateMajorityAge = Calendar.getInstance()
+        dateMajorityAge.set(comingOfAge, month, day)
+        listener.isOldEnough(birthDate.before(dateMajorityAge))
     }
 }
 
