@@ -10,6 +10,10 @@ class ViewListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_list)
 
+        initViews()
+    }
+
+    fun initViews() {
         val myDatasource = Datasource().loadList()
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.adapter = ItemAdapter(this, myDatasource)

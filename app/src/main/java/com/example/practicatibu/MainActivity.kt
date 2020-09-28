@@ -45,6 +45,3 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, ViewListActivity::class.java).apply {})
     }
 }
-
-
-
