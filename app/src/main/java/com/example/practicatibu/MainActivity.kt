@@ -41,4 +41,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(Intent(this, LogcatActivity::class.java))
     }
 
+    fun newActivityList(view: View){
+        startActivity(Intent(this, ViewListActivity::class.java).apply {})
+    }
 }

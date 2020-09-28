@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.practicatibu">
+    package="com.example.practicatibu" >
 
     <application
         android:allowBackup="true"
@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".DatosActivity"/>
+        android:theme="@style/AppTheme" >
+        <activity android:name=".ViewListActivity" />
+        <activity android:name=".DatosActivity" />
         <activity android:name=".LogcatActivity" />
         <activity
             android:name=".ImplicitIntent"
@@ -20,7 +21,7 @@
         <activity
             android:name=".DisplayMessageActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

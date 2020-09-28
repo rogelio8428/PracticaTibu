@@ -7,8 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import com.example.practicatibu.interfaces.ModelValidationListener
+import com.example.practicatibu.model.Usuario
 import kotlinx.android.synthetic.main.activity_logcat.*
-import model.Usuario
 import java.util.*
 
 const val PARAM_USER = "datauser"

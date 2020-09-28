@@ -2,8 +2,8 @@ package com.example.practicatibu
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.practicatibu.model.Usuario
 import kotlinx.android.synthetic.main.activity_datos.*
-import model.Usuario
 
 class DatosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

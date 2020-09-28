@@ -1,6 +1,6 @@
-package model
+package com.example.practicatibu.model
 
-import com.example.practicatibu.ModelValidationListener
+import com.example.practicatibu.interfaces.ModelValidationListener
 import java.io.Serializable
 import java.util.*
 

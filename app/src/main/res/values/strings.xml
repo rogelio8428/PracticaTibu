@@ -38,4 +38,10 @@
     <string name="name">Nombre</string>
     <string name="sport">Deporte</string>
     <string name="validation_age">El usuario debe ser mayor de edad</string>
+    <string name="button_list_view">Ver lista</string>
+    <string name="name1_list">Juan</string>
+    <string name="name2_list">Pedro</string>
+    <string name="name3_list">Pablo</string>
+    <string name="name4_list">Lorenzo</string>
+    <string name="name5_list">Julian</string>
 </resources>
