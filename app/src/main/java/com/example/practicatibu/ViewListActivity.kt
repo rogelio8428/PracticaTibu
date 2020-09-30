@@ -14,9 +14,9 @@ class ViewListActivity : AppCompatActivity() {
     }
 
     fun initViews() {
-        val myDatasource = Datasource().loadList()
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.adapter = ItemAdapter(this, myDatasource)
+        val myData = Datasource().loadList()
+        val recyclerView = findViewById<RecyclerView>(R.id.rv_list_user)
+        recyclerView.adapter = ItemAdapter(this, myData)
         recyclerView.setHasFixedSize(true)
     }
 }

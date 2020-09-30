@@ -90,7 +90,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/distance_button"
         android:gravity="center_horizontal"
-        android:onClick="newActivityList"
         android:text="@string/button_list_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

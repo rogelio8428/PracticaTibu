@@ -3,6 +3,7 @@ package com.example.practicatibu
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -14,6 +15,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initViews()
+    }
+
+    fun initViews(){
+        val boton_lista = findViewById<Button>(R.id.button_list)
+        boton_lista.setOnClickListener{
+            startActivity(Intent(this, ViewListActivity::class.java))
+        }
     }
 
     fun sendNameForTitle(view: View) {
@@ -30,18 +39,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun termsAndConditions(view: View) {
-        startActivity(Intent(this, Terminos::class.java).apply {})
+        startActivity(Intent(this, Terminos::class.java))
     }
 
     fun changeImplicit(view: View) {
-        startActivity(Intent(this, ImplicitIntent::class.java).apply {})
+        startActivity(Intent(this, ImplicitIntent::class.java))
     }
 
     fun newForm(view: View) {
         startActivity(Intent(this, LogcatActivity::class.java))
-    }
-
-    fun newActivityList(view: View){
-        startActivity(Intent(this, ViewListActivity::class.java).apply {})
     }
 }
