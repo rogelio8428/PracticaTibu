@@ -49,6 +49,3 @@ class ItemAdapter(
 
     override fun getItemCount(): Int = dataset.size
 }
-
-
-

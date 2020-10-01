@@ -9,6 +9,7 @@ import com.example.practicatibu.model.Usuario
 import kotlinx.android.synthetic.main.activity_view_list.*
 
 class ViewListActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_list)
@@ -28,5 +29,6 @@ class ViewListActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener {
             putExtra(PARAM_USER, user)
         }
         startActivity(intentDatosActivity)
+
     }
 }
