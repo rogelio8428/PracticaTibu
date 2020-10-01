@@ -17,7 +17,7 @@ class ItemAdapter(
 ) : RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
 
     interface OnItemClickListener {
-        fun onItemClick(name: String?, sport: String?, date: String?, sex: Boolean)
+        fun onItemClick(position: Int)
     }
 
     inner class ItemHolder(itemView: View) : BaseViewHolder<Usuario>(itemView) {
@@ -31,7 +31,7 @@ class ItemAdapter(
                 itemView.tv_sexuality.text = context.getString(R.string.woman)
             }
             itemView.setOnClickListener {
-                itemClickListener.onItemClick(item.name, item.sport, item.date, item.sex)
+                itemClickListener.onItemClick(position)
             }
         }
     }
