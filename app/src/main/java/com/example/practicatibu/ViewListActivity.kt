@@ -9,13 +9,15 @@ import kotlinx.android.synthetic.main.activity_view_list.*
 
 class ViewListActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener {
 
+    private val myData = Datasource().loadList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_list)
 
         initViews()
     }
-    private val myData = Datasource().loadList()
+
     private fun initViews() {
         rv_list_user.layoutManager = LinearLayoutManager(this)
         rv_list_user.adapter = ItemAdapter(this, myData, this)
@@ -26,6 +28,5 @@ class ViewListActivity : AppCompatActivity(), ItemAdapter.OnItemClickListener {
             putExtra(PARAM_USER, myData[position])
         }
         startActivity(intentDatosActivity)
-
     }
 }

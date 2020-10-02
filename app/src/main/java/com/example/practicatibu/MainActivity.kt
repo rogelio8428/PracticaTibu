@@ -3,7 +3,6 @@ package com.example.practicatibu
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,9 +17,9 @@ class MainActivity : AppCompatActivity() {
         initViews()
     }
 
-    fun initViews(){
-        val boton_lista = findViewById<Button>(R.id.button_list)
-        boton_lista.setOnClickListener{
+    private fun initViews(){
+
+        button_list.setOnClickListener{
             startActivity(Intent(this, ViewListActivity::class.java))
         }
     }
