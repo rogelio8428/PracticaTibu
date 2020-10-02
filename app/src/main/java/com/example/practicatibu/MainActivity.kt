@@ -14,6 +14,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        initViews()
+    }
+
+    private fun initViews(){
+
+        button_list.setOnClickListener{
+            startActivity(Intent(this, ViewListActivity::class.java))
+        }
     }
 
     fun sendNameForTitle(view: View) {
@@ -30,18 +38,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun termsAndConditions(view: View) {
-        startActivity(Intent(this, Terminos::class.java).apply {})
+        startActivity(Intent(this, Terminos::class.java))
     }
 
     fun changeImplicit(view: View) {
-        startActivity(Intent(this, ImplicitIntent::class.java).apply {})
+        startActivity(Intent(this, ImplicitIntent::class.java))
     }
 
     fun newForm(view: View) {
         startActivity(Intent(this, LogcatActivity::class.java))
-    }
-
-    fun newActivityList(view: View){
-        startActivity(Intent(this, ViewListActivity::class.java).apply {})
     }
 }

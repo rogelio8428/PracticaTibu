@@ -7,10 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".ViewListActivity">
 
+    <TextView
+        android:id="@+id/tv_title_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/title_list_user"
+        android:textColor="@android:color/background_dark"
+        android:textSize="@dimen/size_text_xlarge" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/rv_list_user"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/large_margin_recycle"
         android:scrollbars="vertical"
         app:layoutManager="LinearLayoutManager" />
 

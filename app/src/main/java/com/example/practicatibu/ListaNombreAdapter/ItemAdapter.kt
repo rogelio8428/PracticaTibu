@@ -4,28 +4,48 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.practicatibu.R
-import com.example.practicatibu.model.ListModel
+import com.example.practicatibu.base.BaseViewHolder
+import com.example.practicatibu.model.Usuario
+import kotlinx.android.synthetic.main.list_item.view.*
 
-class ItemAdapter(private val context: Context, private val dataset: List<ListModel>) :
-    RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+class ItemAdapter(
+    private val context: Context,
+    private val dataset: List<Usuario>,
+    private val itemClickListener: ItemAdapter.OnItemClickListener,
+) : RecyclerView.Adapter<ItemAdapter.ItemHolder>() {
 
-    class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.item_title)
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        val adapterLayout =
-            LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
-        return ItemViewHolder(adapterLayout)
+    inner class ItemHolder(itemView: View) : BaseViewHolder<Usuario>(itemView) {
+        override fun bind(item: Usuario, position: Int) {
+            itemView.tv_name_user.text = item.name
+            itemView.tv_sport.text = item.sport
+            itemView.tv_date.text = item.date
+            if (item.sex) {
+                itemView.tv_sexuality.text = context.getString(R.string.man)
+            } else {
+                itemView.tv_sexuality.text = context.getString(R.string.woman)
+            }
+            itemView.setOnClickListener {
+                itemClickListener.onItemClick(position)
+            }
+        }
     }
 
-    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val item = dataset[position]
-        holder.textView.text = context.resources.getString(item.stringResourceId)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
+        return ItemHolder(LayoutInflater.from(context).inflate(R.layout.list_item, parent, false))
     }
 
-    override fun getItemCount() = dataset.size
+    override fun onBindViewHolder(holder: ItemHolder, position: Int) {
+        when (holder) {
+            is ItemHolder -> holder.bind(dataset[position], position)
+            else -> throw IllegalArgumentException("Se olvido de pasar el viewHolder en el bind")
+        }
+    }
+
+    override fun getItemCount(): Int = dataset.size
 }

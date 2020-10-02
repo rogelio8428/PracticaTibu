@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/item_title"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-    android:textColor="@android:color/black"
-    android:textSize="@dimen/size_text_xlarge" />
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_layout"
+    tools:context=".Terminos">
+
+
+    <LinearLayout
+        android:layout_width="@dimen/width_layout"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/size_term"
+            android:textStyle="bold"
+            tools:text="Nombre" />
+
+        <TextView
+            android:id="@+id/tv_sexuality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:gravity="center"
+            tools:text="Sexualidad" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_sport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/size_term"
+            android:textStyle="bold"
+            tools:text="Deporte"
+            android:layout_marginTop="@dimen/normal_margin"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_margin"
+            tools:text="Fecha" />
+    </LinearLayout>
+</LinearLayout>
